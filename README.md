@@ -1,6 +1,6 @@
 # CountServer
 
-localhost:23400にメッセージを送信すると、直近のワードカウントランキングを出力する
+CounterServer(デフォルトはport:23400)にメッセージを送信すると、直近のワードカウントランキングを出力する
 
 ## Usage
 
@@ -12,6 +12,10 @@ mvn compile exec:java -Dstorm.topology=storm.hot.Topology
 -Dwidth.Window: 現在からの集計対象時間(秒)、デフォルトは3600（直近1時間） 
 
 * tools/Rankings.javaで出力先を設定
+
+* メッセージ送信方法  
+ソケット通信でポート23400にメッセージを投げてください  
+HotWordSpout.javaでポートとかは設定できます
 
 ## UserDictionary
 
